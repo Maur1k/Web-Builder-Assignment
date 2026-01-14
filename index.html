@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Marci Metzger - The Ridge Realty Group. Pahrump's premier real estate agent with nearly 3 decades of experience in commercial and residential properties.">
+    <title>Marci Metzger Homes - Real Estate Agent, Realtor | Pahrump, Nevada</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#1e3a5f',
+                            600: '#152a47',
+                            700: '#0d1b2a',
+                            800: '#09121d',
+                            900: '#050a11',
+                        },
+                        gold: {
+                            400: '#e5c158',
+                            500: '#d4af37',
+                            600: '#b8941f',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Smooth scroll offset for sticky header */
+        html {
+            scroll-padding-top: 80px;
+        }
+
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hero overlay gradient */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 58, 95, 0.65) 50%, rgba(30, 58, 95, 0.85) 100%);
+        }
+
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navbar hide/show animation */
+        .navbar-hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar-visible {
+            transform: translateY(0);
+        }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Gallery image hover */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30, 58, 95, 0.8) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Contact Section Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .contact-item {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .contact-info-card {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .whatsapp-button {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Footer Section Animations */
+        .footer-section {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Hover glow effect for contact icons */
+        .contact-item:hover .bg-gradient-to-br {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Logo visibility filters */
+        .logo-white {
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-dark {
+            filter: none;
+        }
+
+        /* Gallery Slider Styles */
+        .active-thumbnail {
+            border: 3px solid #d4af37;
+            transform: scale(0.95);
+        }
+
+        .thumbnail-item {
+            transition: all 0.3s ease;
+        }
+
+        .thumbnail-item:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Peeking Slider Styling */
+        #gallery-slider-container {
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            gap: 20px;
+            /* Center the active slide */
+        }
+
+        .slide {
+            flex: 0 0 80%;
+            transition: all 0.6s ease;
+            opacity: 0.4;
+            transform: scale(0.9);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            flex: 0 0 80%;
+            box-shadow: 0 25px 50px -12px rgba(66, 153, 225, 0.4);
+        }
+
+        @media (min-width: 1024px) {
+            .slider-track {
+                padding: 0;
+            }
+
+            .slide {
+                flex: 0 0 60%;
+            }
+
+            .slide.active {
+                flex: 0 0 60%;
+            }
+        }
+
+        .gallery-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(66, 153, 225, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+
+    <!-- Invisible hover trigger zone for navbar -->
+    <div id="nav-hover-trigger" class="fixed top-0 left-0 w-full h-16 z-40 pointer-events-auto"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar"
+        class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent navbar-visible">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center">
+                        <img src="images/logo.png" alt="Marci Metzger Homes" id="nav-logo"
+                            class="h-12 w-auto logo-white transition-all duration-500">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home"
+                        class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">Home</a>
+                    <a href="#about"
+                        class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">About</a>
+                    <a href="#services"
+                        class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">Services</a>
+                    <a href="#gallery"
+                        class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">Gallery</a>
+                    <a href="#contact"
+                        class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="tel:2069196886"
+                        class="bg-gold-500 hover:bg-gold-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl">
+                        Call Now
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-gold-400 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home"
+                    class="mobile-nav-link block px-3 py-2 text-primary-500 hover:bg-gray-100 rounded-md font-medium">Home</a>
+                <a href="#about"
+                    class="mobile-nav-link block px-3 py-2 text-primary-500 hover:bg-gray-100 rounded-md font-medium">About</a>
+                <a href="#services"
+                    class="mobile-nav-link block px-3 py-2 text-primary-500 hover:bg-gray-100 rounded-md font-medium">Services</a>
+                <a href="#gallery"
+                    class="mobile-nav-link block px-3 py-2 text-primary-500 hover:bg-gray-100 rounded-md font-medium">Gallery</a>
+                <a href="#contact"
+                    class="mobile-nav-link block px-3 py-2 text-primary-500 hover:bg-gray-100 rounded-md font-medium">Contact</a>
+                <a href="tel:2069196886"
+                    class="block px-3 py-2 bg-gold-500 text-white rounded-md font-semibold text-center">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/hero_background.jpg" alt="Pahrump Real Estate" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <p class="text-gold-400 text-lg sm:text-xl font-semibold mb-4 tracking-wide uppercase animate-fade-in-up">
+                Marci Metzger - The Ridge Realty Group</p>
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up"
+                style="animation-delay: 0.2s;">
+                Pahrump Realtor
+            </h1>
+            <p class="text-xl sm:text-2xl mb-8 text-gray-100 animate-fade-in-up" style="animation-delay: 0.4s;">
+                Nearly 3 Decades of Excellence in Real Estate
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up"
+                style="animation-delay: 0.6s;">
+                <a href="tel:2069196886"
+                    class="bg-gold-500 hover:bg-gold-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105">
+                    Call (206) 919-6886
+                </a>
+                <a href="#contact"
+                    class="bg-white hover:bg-gray-100 text-primary-500 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl hover:scale-105">
+                    Get Started
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+            <a href="#about" class="text-white animate-bounce">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image -->
+                <div class="order-2 md:order-1">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gold-500 rounded-2xl opacity-20"></div>
+                        <img src="images/marci_metzger_profile.jpg" alt="Marci Metzger"
+                            class="relative rounded-2xl shadow-2xl w-full">
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="order-1 md:order-2">
+                    <p class="text-gold-500 font-semibold mb-2 uppercase tracking-wide">About Me</p>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-primary-500 mb-6">MARCI METZGER</h2>
+                    <h3 class="text-2xl font-semibold text-gray-700 mb-6">REALTOR FOR NEARLY 3 DECADES!</h3>
+
+                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                        <p>
+                            With nearly three decades of experience in the real estate industry, I bring unparalleled
+                            expertise and dedication to every client interaction. My commitment to excellence has made
+                            me one of Pahrump's most trusted real estate professionals.
+                        </p>
+                        <p>
+                            Whether you're buying your dream home, selling your property, or exploring investment
+                            opportunities, I provide personalized service backed by deep market knowledge and a proven
+                            track record of success.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="tel:2069196886"
+                            class="inline-flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                            206-919-6886
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get It Sold Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-primary-500 mb-4">GET IT SOLD</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Top Residential Sales Last 5 Years
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-500 mb-4">Proven Results</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        We helped nearly 90 clients in 2021, and closed 28.5 million in sales! Our team works hard
+                        everyday to grow and learn, so that we may continue to excel in our market. Our clients deserve
+                        our best, & we want to make sure our best is better every year.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-500 mb-4">Don't Just List it...</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Get it SOLD! We exhaust every avenue to ensure our listings are at the fingertips of every
+                        possible buyer, getting you top dollar for your home.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primary-500 mb-4">Guide to Buyers</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Nobody knows the market like we do. Enjoy having a pro at your service. Market analysis,
+                        upgrades lists, contractors on speed dial, & more!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-gold-500 font-semibold mb-2 uppercase tracking-wide">Our Services</p>
+                <h2 class="text-4xl lg:text-5xl font-bold text-primary-500 mb-4">Real Estate Done Right</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive real estate services tailored to your unique needs
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/service_residential_sales.jpg" alt="Residential Sales"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-primary-500 mb-4">Commercial & Residential</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Nervous about your property adventure? Don't be. Whether you're getting ready to buy or sell
+                            your residence, looking at investment properties, or just curious about the markets, our
+                            team ensures you get the best experience possible!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/service_listings.jpg" alt="Property Listings"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-primary-500 mb-4">Find Your Dream Home</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Large or small, condo or mansion, we can find it and get at the price that's right.
+                            Fixer-uppers? Luxury? We can help with all of it! We live, work, and play in this community.
+                            Happy to help you find where to put your hard-earned dollars.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/service_buyers_guide.jpg" alt="Buyer's Guide"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-primary-500 mb-4">Rely on Expertise</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            If you have questions about affordability, credit, and loan options, trust us to connect you
+                            with the right people to get the answers you need in a timely fashion. We make sure you feel
+                            confident and educated every step of the way.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section (Full Overhaul) -->
+    <section id="gallery" class="py-24 bg-primary-900 relative overflow-hidden">
+        <!-- Background Glows -->
+        <div class="gallery-glow -top-40 -left-40"></div>
+        <div class="gallery-glow -bottom-40 -right-40"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-gold-400 font-semibold mb-2 uppercase tracking-widest animate-pulse">Portfolio</p>
+                <h2 class="text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">PHOTO GALLERY</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div id="gallery-slider-container" class="mb-12">
+                <div class="slider-track" id="slider-track">
+                    <!-- Slides will be injected via JS for better management -->
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prev-btn"
+                    class="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white p-4 rounded-full transition-all duration-300 z-20 border border-white/20 group">
+                    <svg class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button id="next-btn"
+                    class="absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white p-4 rounded-full transition-all duration-300 z-20 border border-white/20 group">
+                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7">
+                        </path>
+                    </svg>
+                </button>
+
+                <!-- Caption Overlay (Floating) -->
+                <div
+                    class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-center pointer-events-none w-full px-4">
+                    <h3 id="image-caption"
+                        class="text-2xl lg:text-3xl font-serif font-bold text-white mb-2 drop-shadow-2xl">Luxury Living
+                        Room</h3>
+                    <p id="image-counter" class="text-gold-400 font-bold tracking-[0.3em] text-sm uppercase">1 / 7</p>
+                </div>
+            </div>
+
+            <!-- Thumbnails -->
+            <div class="flex justify-center flex-wrap gap-3 max-w-4xl mx-auto" id="thumbnail-container">
+                <!-- Thumbnails will be injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-gold-400 font-semibold mb-2 uppercase tracking-wide">Get In Touch</p>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">Call or Visit</h2>
+                <p class="text-xl text-gray-100 max-w-3xl mx-auto">
+                    Ready to make your real estate dreams a reality? Contact us today!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-primary-500 mb-6">Send Message</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent text-gray-900 transition-all duration-200">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address
+                                *</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent text-gray-900 transition-all duration-200">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number
+                                *</label>
+                            <input type="tel" id="phone" name="phone" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent text-gray-900 transition-all duration-200">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message
+                                *</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent text-gray-900 transition-all duration-200"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gold-500 hover:bg-gold-600 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105">
+                            Send Message
+                        </button>
+
+                        <p id="form-message" class="text-sm text-center hidden"></p>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8 contact-info-container">
+                    <div
+                        class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-gold-400/50 contact-info-card">
+                        <h3 class="text-2xl font-bold mb-8 text-white">Contact Information</h3>
+
+                        <div class="space-y-6">
+                            <!-- Address -->
+                            <div class="flex items-start group contact-item" style="animation-delay: 0.1s">
+                                <div
+                                    class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                        </path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-lg mb-2 text-white">Address</h4>
+                                    <p class="text-white/90 leading-relaxed">3190 HW-160, Suite F<br>Pahrump, Nevada
+                                        89048<br>United States</p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start group contact-item" style="animation-delay: 0.2s">
+                                <div
+                                    class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-lg mb-2 text-white">Phone</h4>
+                                    <a href="tel:2069196886"
+                                        class="text-white/90 hover:text-gold-300 transition-all duration-300 font-medium hover:underline">(206)
+                                        919-6886</a>
+                                </div>
+                            </div>
+
+                            <!-- Office Hours -->
+                            <div class="flex items-start group contact-item" style="animation-delay: 0.3s">
+                                <div
+                                    class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="font-bold text-lg mb-2 text-white">Office Hours</h4>
+                                    <p class="text-white/90 leading-relaxed font-medium">Open daily<br>8:00 am - 7:00 pm
+                                    </p>
+                                    <p class="text-sm text-white/75 mt-2 leading-relaxed">Appointments outside office
+                                        hours available upon request. Just call!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/14259412560" target="_blank"
+                        class="whatsapp-button block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-5 rounded-xl font-bold text-lg text-center transition-all duration-300 shadow-2xl hover:shadow-green-500/50 hover:scale-105 hover:-translate-y-1 border-2 border-green-400/30"
+                        style="animation-delay: 0.4s">
+                        <svg class="w-7 h-7 inline-block mr-3 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Message us on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-primary-800 to-primary-900 text-white py-16 relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-gold-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="footer-section" style="animation-delay: 0.1s">
+                    <img src="images/logo.png" alt="Marci Metzger Homes"
+                        class="h-14 mb-6 hover:scale-105 transition-transform duration-300 logo-white">
+                    <p class="text-gray-200 leading-relaxed text-base">
+                        Your trusted partner in Pahrump real estate for nearly 3 decades.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section" style="animation-delay: 0.2s">
+                    <h4 class="text-xl font-bold mb-6 text-white relative inline-block">
+                        Quick Links
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home"
+                                class="footer-link text-gray-200 hover:text-gold-300 transition-all duration-300 inline-flex items-center group">
+                                <span
+                                    class="w-0 group-hover:w-2 h-2 bg-gold-400 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                                Home
+                            </a></li>
+                        <li><a href="#about"
+                                class="footer-link text-gray-200 hover:text-gold-300 transition-all duration-300 inline-flex items-center group">
+                                <span
+                                    class="w-0 group-hover:w-2 h-2 bg-gold-400 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                                About
+                            </a></li>
+                        <li><a href="#services"
+                                class="footer-link text-gray-200 hover:text-gold-300 transition-all duration-300 inline-flex items-center group">
+                                <span
+                                    class="w-0 group-hover:w-2 h-2 bg-gold-400 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                                Services
+                            </a></li>
+                        <li><a href="#gallery"
+                                class="footer-link text-gray-200 hover:text-gold-300 transition-all duration-300 inline-flex items-center group">
+                                <span
+                                    class="w-0 group-hover:w-2 h-2 bg-gold-400 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                                Gallery
+                            </a></li>
+                        <li><a href="#contact"
+                                class="footer-link text-gray-200 hover:text-gold-300 transition-all duration-300 inline-flex items-center group">
+                                <span
+                                    class="w-0 group-hover:w-2 h-2 bg-gold-400 rounded-full mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                                Contact
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-section" style="animation-delay: 0.3s">
+                    <h4 class="text-xl font-bold mb-6 text-white relative inline-block">
+                        Contact Us
+                    </h4>
+                    <ul class="space-y-3 text-gray-200">
+                        <li class="flex items-start hover:text-gold-300 transition-colors duration-300">
+                            <svg class="w-5 h-5 mr-2 mt-0.5 text-gold-400 flex-shrink-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>3190 HW-160, Suite F</span>
+                        </li>
+                        <li class="flex items-start hover:text-gold-300 transition-colors duration-300 ml-7">
+                            Pahrump, Nevada 89048
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 mr-2 mt-0.5 text-gold-400 flex-shrink-0" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                </path>
+                            </svg>
+                            <a href="tel:2069196886"
+                                class="hover:text-gold-300 transition-all duration-300 font-medium hover:underline">(206)
+                                919-6886</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 text-center">
+                <p class="text-gray-300 text-sm">&copy; 2023 Marci Metzger Homes - All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Enhanced Navbar scroll effect with auto-hide/show
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navHoverTrigger = document.getElementById('nav-hover-trigger');
+        let lastScrollY = window.scrollY;
+        let isNavbarHovered = false;
+        let ticking = false;
+
+        // Track navbar hover state
+        navbar.addEventListener('mouseenter', () => {
+            isNavbarHovered = true;
+            navbar.classList.remove('navbar-hidden');
+            navbar.classList.add('navbar-visible');
+        });
+
+        navbar.addEventListener('mouseleave', () => {
+            isNavbarHovered = false;
+            // Re-evaluate visibility based on scroll position
+            if (window.scrollY > 100 && lastScrollY < window.scrollY) {
+                navbar.classList.add('navbar-hidden');
+                navbar.classList.remove('navbar-visible');
+            }
+        });
+
+        // Hover trigger zone - shows navbar when mouse is at top of page
+        navHoverTrigger.addEventListener('mouseenter', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.remove('navbar-hidden');
+                navbar.classList.add('navbar-visible');
+            }
+        });
+
+        navHoverTrigger.addEventListener('mouseleave', () => {
+            // Only hide if we're scrolled down and not hovering the navbar itself
+            setTimeout(() => {
+                if (!isNavbarHovered && window.scrollY > 100) {
+                    navbar.classList.add('navbar-hidden');
+                    navbar.classList.remove('navbar-visible');
+                }
+            }, 100); // Small delay to allow mouse to move to navbar
+        });
+
+        // Optimized scroll handler using requestAnimationFrame
+        function updateNavbar() {
+            const currentScrollY = window.scrollY;
+            const navLogo = document.getElementById('nav-logo');
+            // Change background and text color based on scroll position
+            if (currentScrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+                navLogo.classList.remove('logo-white');
+                navLogo.classList.add('logo-dark');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white');
+                    link.classList.add('text-primary-500');
+                });
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+                navLogo.classList.add('logo-white');
+                navLogo.classList.remove('logo-dark');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary-500');
+                    link.classList.add('text-white');
+                });
+            }
+
+            // Auto-hide/show logic (only if not hovered)
+            if (!isNavbarHovered) {
+                if (currentScrollY > 100) {
+                    // Scrolling down - hide navbar
+                    if (currentScrollY > lastScrollY) {
+                        navbar.classList.add('navbar-hidden');
+                        navbar.classList.remove('navbar-visible');
+                    }
+                    // Scrolling up - show navbar
+                    else if (currentScrollY < lastScrollY) {
+                        navbar.classList.remove('navbar-hidden');
+                        navbar.classList.add('navbar-visible');
+                    }
+                } else {
+                    // Near top of page - always show
+                    navbar.classList.remove('navbar-hidden');
+                    navbar.classList.add('navbar-visible');
+                }
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        // Throttle scroll events using requestAnimationFrame
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        });
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showFormMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            // Validate phone (basic validation)
+            const phoneRegex = /^[\d\s\-\(\)]+$/;
+            if (!phoneRegex.test(phone) || phone.length < 10) {
+                showFormMessage('Please enter a valid phone number.', 'error');
+                return;
+            }
+
+            // If validation passes
+            showFormMessage('Thank you for your message! We will contact you soon.', 'success');
+            contactForm.reset();
+
+            // In a real application, you would send the form data to a server here
+            console.log('Form submitted:', { name, email, phone, message });
+        });
+
+        function showFormMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.classList.remove('hidden');
+
+            if (type === 'success') {
+                formMessage.classList.remove('text-red-600');
+                formMessage.classList.add('text-green-600');
+            } else {
+                formMessage.classList.remove('text-green-600');
+                formMessage.classList.add('text-red-600');
+            }
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Photo Gallery Slider Logic (Enhanced Peeking Slider)
+        const galleryImages = [
+            { src: 'images/gallery_house_1.jpg', caption: 'Luxury Living Room' },
+            { src: 'images/gallery_house_2.jpg', caption: 'Mountain View Balcony' },
+            { src: 'images/gallery_house_3.jpg', caption: 'Modern Kitchen' },
+            { src: 'images/gallery_house_4.jpg', caption: 'Master Bedroom' },
+            { src: 'images/gallery_house_5.jpg', caption: 'Backyard Pool' },
+            { src: 'images/gallery_house_6.jpg', caption: 'Home Exterior' },
+
+        ];
+
+        let currentImageIndex = 0;
+        const sliderTrack = document.getElementById('slider-track');
+        const thumbnailContainer = document.getElementById('thumbnail-container');
+        const captionText = document.getElementById('image-caption');
+        const counterText = document.getElementById('image-counter');
+
+        // Initialize Gallery
+        function initGallery() {
+            // Inject slides
+            sliderTrack.innerHTML = galleryImages.map((img, index) => `
+                <div class="slide ${index === 0 ? 'active' : ''}" data-index="${index}">
+                    <img src="${img.src}" alt="${img.caption}" class="w-full h-full object-cover">
+                </div>
+            `).join('');
+
+            // Inject thumbnails
+            thumbnailContainer.innerHTML = galleryImages.map((img, index) => `
+                <div class="thumbnail-item relative cursor-pointer rounded-xl overflow-hidden h-16 w-16 sm:h-20 sm:w-20 ${index === 0 ? 'active-thumbnail' : ''}" data-index="${index}">
+                    <img src="${img.src}" alt="${img.caption}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black/40 hover:bg-transparent transition-colors"></div>
+                </div>
+            `).join('');
+
+            updateGallery(0);
+        }
+
+        function updateGallery(index) {
+            currentImageIndex = index;
+            const slides = document.querySelectorAll('.slide');
+            const thumbnails = document.querySelectorAll('.thumbnail-item');
+
+            // Update active states
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active-thumbnail', i === index);
+            });
+
+            // Calculate slide width + gap
+            const slideWidth = slides[0].offsetWidth;
+            const gap = 20; // Matches CSS gap
+
+            // Dynamic translation to keep active slide perfectly centered
+            const containerWidth = document.getElementById('gallery-slider-container').offsetWidth;
+            const offset = (containerWidth / 2) - (slideWidth / 2) - index * (slideWidth + gap);
+            sliderTrack.style.transform = `translateX(${offset}px)`;
+
+            // Update text
+            captionText.style.opacity = '0';
+            counterText.style.opacity = '0';
+
+            setTimeout(() => {
+                captionText.textContent = galleryImages[index].caption;
+                counterText.textContent = `${index + 1} / ${galleryImages.length}`;
+                captionText.style.opacity = '1';
+                counterText.style.opacity = '1';
+            }, 300);
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            let newIndex = currentImageIndex - 1;
+            if (newIndex < 0) newIndex = galleryImages.length - 1;
+            updateGallery(newIndex);
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            let newIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateGallery(newIndex);
+        });
+
+        // Use event delegation for thumbnails
+        thumbnailContainer.addEventListener('click', (e) => {
+            const thumb = e.target.closest('.thumbnail-item');
+            if (thumb) {
+                const index = parseInt(thumb.dataset.index);
+                updateGallery(index);
+            }
+        });
+
+        // Handle window resize to keep slider position correct
+        window.addEventListener('resize', () => updateGallery(currentImageIndex));
+
+        // Initialize on load
+        initGallery();
+    </script>
+</body>
+
+</html>
