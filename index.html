@@ -8,17 +8,17 @@
         content="Marci Metzger - The Ridge Realty Group. Pahrump's premier real estate agent with nearly 3 decades of experience in commercial and residential properties.">
     <title>Marci Metzger Homes - Real Estate Agent, Realtor | Pahrump, Nevada</title>
 
-    <!-- Tailwind CSS CDN -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind Config -->
+    
     <script>
         tailwind.config = {
             theme: {
@@ -62,12 +62,12 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Smooth scroll offset for sticky header */
+        
         html {
             scroll-padding-top: 80px;
         }
 
-        /* Custom animations */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -84,18 +84,18 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
-        /* Hero overlay gradient */
+        
         .hero-overlay {
             background: linear-gradient(135deg, rgba(30, 58, 95, 0.85) 0%, rgba(30, 58, 95, 0.65) 50%, rgba(30, 58, 95, 0.85) 100%);
         }
 
-        /* Navbar scroll effect */
+        
         .navbar-scrolled {
             background-color: rgba(255, 255, 255, 0.98);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
-        /* Navbar hide/show animation */
+        
         .navbar-hidden {
             transform: translateY(-100%);
         }
@@ -104,7 +104,7 @@
             transform: translateY(0);
         }
 
-        /* Card hover effects */
+        
         .card-hover {
             transition: all 0.3s ease;
         }
@@ -114,7 +114,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
-        /* Gallery image hover */
+        
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -140,7 +140,7 @@
             opacity: 1;
         }
 
-        /* Contact Section Animations */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -177,18 +177,18 @@
             opacity: 0;
         }
 
-        /* Footer Section Animations */
+        
         .footer-section {
             animation: fadeInUp 0.6s ease-out forwards;
             opacity: 0;
         }
 
-        /* Hover glow effect for contact icons */
+        
         .contact-item:hover .bg-gradient-to-br {
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* Logo visibility filters */
+        
         .logo-white {
             filter: brightness(0) invert(1);
         }
@@ -197,7 +197,7 @@
             filter: none;
         }
 
-        /* Gallery Slider Styles */
+        
         .active-thumbnail {
             border: 3px solid #d4af37;
             transform: scale(0.95);
@@ -211,7 +211,7 @@
             transform: translateY(-2px);
         }
 
-        /* Peeking Slider Styling */
+        
         #gallery-slider-container {
             position: relative;
             overflow: hidden;
@@ -222,7 +222,7 @@
             display: flex;
             transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             gap: 20px;
-            /* Center the active slide */
+            
         }
 
         .slide {
@@ -272,15 +272,15 @@
 <body class="bg-white text-gray-800">
 
 
-    <!-- Invisible hover trigger zone for navbar -->
+    
     <div id="nav-hover-trigger" class="fixed top-0 left-0 w-full h-16 z-40 pointer-events-auto"></div>
 
-    <!-- Navigation -->
+    
     <nav id="navbar"
         class="fixed w-full top-0 z-50 transition-all duration-500 ease-in-out bg-transparent navbar-visible">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
+                
                 <div class="flex-shrink-0">
                     <a href="#home" class="flex items-center">
                         <img src="images/logo.png" alt="Marci Metzger Homes" id="nav-logo"
@@ -288,7 +288,7 @@
                     </a>
                 </div>
 
-                <!-- Desktop Navigation -->
+                
                 <div class="hidden md:flex space-x-8">
                     <a href="#home"
                         class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">Home</a>
@@ -302,7 +302,7 @@
                         class="nav-link text-white hover:text-gold-400 transition-colors duration-200 font-medium">Contact</a>
                 </div>
 
-                <!-- CTA Button -->
+                
                 <div class="hidden md:block">
                     <a href="tel:2069196886"
                         class="bg-gold-500 hover:bg-gold-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl">
@@ -310,7 +310,7 @@
                     </a>
                 </div>
 
-                <!-- Mobile menu button -->
+                
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-white hover:text-gold-400 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -322,7 +322,7 @@
             </div>
         </div>
 
-        <!-- Mobile menu -->
+        
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#home"
@@ -341,15 +341,15 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    
     <section id="home" class="relative h-screen flex items-center justify-center">
-        <!-- Background Image -->
+        
         <div class="absolute inset-0 z-0">
             <img src="images/hero_background.jpg" alt="Pahrump Real Estate" class="w-full h-full object-cover">
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
-        <!-- Hero Content -->
+        
         <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
             <p class="text-gold-400 text-lg sm:text-xl font-semibold mb-4 tracking-wide uppercase animate-fade-in-up">
                 Marci Metzger - The Ridge Realty Group</p>
@@ -373,7 +373,7 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
+        
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
             <a href="#about" class="text-white animate-bounce">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -384,11 +384,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    
     <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Image -->
+                
                 <div class="order-2 md:order-1">
                     <div class="relative">
                         <div class="absolute -inset-4 bg-gold-500 rounded-2xl opacity-20"></div>
@@ -397,7 +397,7 @@
                     </div>
                 </div>
 
-                <!-- Content -->
+                
                 <div class="order-1 md:order-2">
                     <p class="text-gold-500 font-semibold mb-2 uppercase tracking-wide">About Me</p>
                     <h2 class="text-4xl lg:text-5xl font-bold text-primary-500 mb-6">MARCI METZGER</h2>
@@ -436,7 +436,7 @@
         </div>
     </section>
 
-    <!-- Get It Sold Section -->
+    
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -447,7 +447,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
+                
                 <div
                     class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
                     <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
@@ -464,7 +464,7 @@
                     </p>
                 </div>
 
-                <!-- Card 2 -->
+                
                 <div
                     class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
                     <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
@@ -481,7 +481,7 @@
                     </p>
                 </div>
 
-                <!-- Card 3 -->
+                
                 <div
                     class="bg-gradient-to-br from-primary-50 to-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
                     <div class="w-16 h-16 bg-gold-500 rounded-full flex items-center justify-center mb-6">
@@ -501,7 +501,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    
     <section id="services" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -513,7 +513,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <!-- Service 1 -->
+                
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                     <div class="h-64 overflow-hidden">
                         <img src="images/service_residential_sales.jpg" alt="Residential Sales"
@@ -529,7 +529,7 @@
                     </div>
                 </div>
 
-                <!-- Service 2 -->
+                
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                     <div class="h-64 overflow-hidden">
                         <img src="images/service_listings.jpg" alt="Property Listings"
@@ -545,7 +545,7 @@
                     </div>
                 </div>
 
-                <!-- Service 3 -->
+                
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                     <div class="h-64 overflow-hidden">
                         <img src="images/service_buyers_guide.jpg" alt="Buyer's Guide"
@@ -564,9 +564,9 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Section (Full Overhaul) -->
+    
     <section id="gallery" class="py-24 bg-primary-900 relative overflow-hidden">
-        <!-- Background Glows -->
+        
         <div class="gallery-glow -top-40 -left-40"></div>
         <div class="gallery-glow -bottom-40 -right-40"></div>
 
@@ -579,10 +579,10 @@
 
             <div id="gallery-slider-container" class="mb-12">
                 <div class="slider-track" id="slider-track">
-                    <!-- Slides will be injected via JS for better management -->
+                    
                 </div>
 
-                <!-- Navigation Arrows -->
+                
                 <button id="prev-btn"
                     class="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white p-4 rounded-full transition-all duration-300 z-20 border border-white/20 group">
                     <svg class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" fill="none"
@@ -600,7 +600,7 @@
                     </svg>
                 </button>
 
-                <!-- Caption Overlay (Floating) -->
+                
                 <div
                     class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 text-center pointer-events-none w-full px-4">
                     <h3 id="image-caption"
@@ -610,14 +610,14 @@
                 </div>
             </div>
 
-            <!-- Thumbnails -->
+            
             <div class="flex justify-center flex-wrap gap-3 max-w-4xl mx-auto" id="thumbnail-container">
-                <!-- Thumbnails will be injected via JS -->
+                
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    
     <section id="contact" class="py-20 bg-gradient-to-br from-primary-500 to-primary-700 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -629,7 +629,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Form -->
+                
                 <div class="bg-white rounded-2xl p-8 shadow-2xl">
                     <h3 class="text-2xl font-bold text-primary-500 mb-6">Send Message</h3>
                     <form id="contact-form" class="space-y-6">
@@ -669,14 +669,14 @@
                     </form>
                 </div>
 
-                <!-- Contact Information -->
+                
                 <div class="space-y-8 contact-info-container">
                     <div
                         class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/30 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:border-gold-400/50 contact-info-card">
                         <h3 class="text-2xl font-bold mb-8 text-white">Contact Information</h3>
 
                         <div class="space-y-6">
-                            <!-- Address -->
+                            
                             <div class="flex items-start group contact-item" style="animation-delay: 0.1s">
                                 <div
                                     class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
@@ -696,7 +696,7 @@
                                 </div>
                             </div>
 
-                            <!-- Phone -->
+                            
                             <div class="flex items-start group contact-item" style="animation-delay: 0.2s">
                                 <div
                                     class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
@@ -715,7 +715,7 @@
                                 </div>
                             </div>
 
-                            <!-- Office Hours -->
+                            
                             <div class="flex items-start group contact-item" style="animation-delay: 0.3s">
                                 <div
                                     class="w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mr-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
@@ -736,7 +736,7 @@
                         </div>
                     </div>
 
-                    <!-- WhatsApp -->
+                    
                     <a href="https://wa.me/14259412560" target="_blank"
                         class="whatsapp-button block bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-5 rounded-xl font-bold text-lg text-center transition-all duration-300 shadow-2xl hover:shadow-green-500/50 hover:scale-105 hover:-translate-y-1 border-2 border-green-400/30"
                         style="animation-delay: 0.4s">
@@ -751,9 +751,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    
     <footer class="bg-gradient-to-b from-primary-800 to-primary-900 text-white py-16 relative overflow-hidden">
-        <!-- Decorative background elements -->
+        
         <div class="absolute inset-0 opacity-5">
             <div class="absolute top-0 left-0 w-96 h-96 bg-gold-400 rounded-full blur-3xl"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl"></div>
@@ -761,7 +761,7 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid md:grid-cols-3 gap-12 mb-12">
-                <!-- Brand -->
+                
                 <div class="footer-section" style="animation-delay: 0.1s">
                     <img src="images/logo.png" alt="Marci Metzger Homes"
                         class="h-14 mb-6 hover:scale-105 transition-transform duration-300 logo-white">
@@ -770,7 +770,7 @@
                     </p>
                 </div>
 
-                <!-- Quick Links -->
+                
                 <div class="footer-section" style="animation-delay: 0.2s">
                     <h4 class="text-xl font-bold mb-6 text-white relative inline-block">
                         Quick Links
@@ -809,7 +809,7 @@
                     </ul>
                 </div>
 
-                <!-- Contact -->
+                
                 <div class="footer-section" style="animation-delay: 0.3s">
                     <h4 class="text-xl font-bold mb-6 text-white relative inline-block">
                         Contact Us
@@ -850,9 +850,9 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    
     <script>
-        // Mobile menu toggle
+        
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -860,7 +860,7 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking on a link
+        
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -868,7 +868,7 @@
             });
         });
 
-        // Enhanced Navbar scroll effect with auto-hide/show
+        
         const navbar = document.getElementById('navbar');
         const navLinks = document.querySelectorAll('.nav-link');
         const navHoverTrigger = document.getElementById('nav-hover-trigger');
@@ -876,7 +876,7 @@
         let isNavbarHovered = false;
         let ticking = false;
 
-        // Track navbar hover state
+        
         navbar.addEventListener('mouseenter', () => {
             isNavbarHovered = true;
             navbar.classList.remove('navbar-hidden');
@@ -885,14 +885,14 @@
 
         navbar.addEventListener('mouseleave', () => {
             isNavbarHovered = false;
-            // Re-evaluate visibility based on scroll position
+            
             if (window.scrollY > 100 && lastScrollY < window.scrollY) {
                 navbar.classList.add('navbar-hidden');
                 navbar.classList.remove('navbar-visible');
             }
         });
 
-        // Hover trigger zone - shows navbar when mouse is at top of page
+        
         navHoverTrigger.addEventListener('mouseenter', () => {
             if (window.scrollY > 100) {
                 navbar.classList.remove('navbar-hidden');
@@ -901,20 +901,20 @@
         });
 
         navHoverTrigger.addEventListener('mouseleave', () => {
-            // Only hide if we're scrolled down and not hovering the navbar itself
+            
             setTimeout(() => {
                 if (!isNavbarHovered && window.scrollY > 100) {
                     navbar.classList.add('navbar-hidden');
                     navbar.classList.remove('navbar-visible');
                 }
-            }, 100); // Small delay to allow mouse to move to navbar
+            }, 100); 
         });
 
-        // Optimized scroll handler using requestAnimationFrame
+        
         function updateNavbar() {
             const currentScrollY = window.scrollY;
             const navLogo = document.getElementById('nav-logo');
-            // Change background and text color based on scroll position
+            
             if (currentScrollY > 50) {
                 navbar.classList.add('navbar-scrolled');
                 navLogo.classList.remove('logo-white');
@@ -933,21 +933,21 @@
                 });
             }
 
-            // Auto-hide/show logic (only if not hovered)
+            
             if (!isNavbarHovered) {
                 if (currentScrollY > 100) {
-                    // Scrolling down - hide navbar
+                    
                     if (currentScrollY > lastScrollY) {
                         navbar.classList.add('navbar-hidden');
                         navbar.classList.remove('navbar-visible');
                     }
-                    // Scrolling up - show navbar
+                    
                     else if (currentScrollY < lastScrollY) {
                         navbar.classList.remove('navbar-hidden');
                         navbar.classList.add('navbar-visible');
                     }
                 } else {
-                    // Near top of page - always show
+                    
                     navbar.classList.remove('navbar-hidden');
                     navbar.classList.add('navbar-visible');
                 }
@@ -957,7 +957,7 @@
             ticking = false;
         }
 
-        // Throttle scroll events using requestAnimationFrame
+        
         window.addEventListener('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(updateNavbar);
@@ -965,38 +965,38 @@
             }
         });
 
-        // Form validation and submission
+        
         const contactForm = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Get form values
+            
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // Validate email
+            
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
 
-            // Validate phone (basic validation)
+            
             const phoneRegex = /^[\d\s\-\(\)]+$/;
             if (!phoneRegex.test(phone) || phone.length < 10) {
                 showFormMessage('Please enter a valid phone number.', 'error');
                 return;
             }
 
-            // If validation passes
+            
             showFormMessage('Thank you for your message! We will contact you soon.', 'success');
             contactForm.reset();
 
-            // In a real application, you would send the form data to a server here
+            
             console.log('Form submitted:', { name, email, phone, message });
         });
 
@@ -1012,13 +1012,13 @@
                 formMessage.classList.add('text-red-600');
             }
 
-            // Hide message after 5 seconds
+            
             setTimeout(() => {
                 formMessage.classList.add('hidden');
             }, 5000);
         }
 
-        // Smooth scrolling for anchor links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1032,7 +1032,7 @@
             });
         });
 
-        // Photo Gallery Slider Logic (Enhanced Peeking Slider)
+        
         const galleryImages = [
             { src: 'images/gallery_house_1.jpg', caption: 'Luxury Living Room' },
             { src: 'images/gallery_house_2.jpg', caption: 'Mountain View Balcony' },
@@ -1049,16 +1049,16 @@
         const captionText = document.getElementById('image-caption');
         const counterText = document.getElementById('image-counter');
 
-        // Initialize Gallery
+        
         function initGallery() {
-            // Inject slides
+            
             sliderTrack.innerHTML = galleryImages.map((img, index) => `
                 <div class="slide ${index === 0 ? 'active' : ''}" data-index="${index}">
                     <img src="${img.src}" alt="${img.caption}" class="w-full h-full object-cover">
                 </div>
             `).join('');
 
-            // Inject thumbnails
+            
             thumbnailContainer.innerHTML = galleryImages.map((img, index) => `
                 <div class="thumbnail-item relative cursor-pointer rounded-xl overflow-hidden h-16 w-16 sm:h-20 sm:w-20 ${index === 0 ? 'active-thumbnail' : ''}" data-index="${index}">
                     <img src="${img.src}" alt="${img.caption}" class="w-full h-full object-cover">
@@ -1074,7 +1074,7 @@
             const slides = document.querySelectorAll('.slide');
             const thumbnails = document.querySelectorAll('.thumbnail-item');
 
-            // Update active states
+            
             slides.forEach((slide, i) => {
                 slide.classList.toggle('active', i === index);
             });
@@ -1083,16 +1083,16 @@
                 thumb.classList.toggle('active-thumbnail', i === index);
             });
 
-            // Calculate slide width + gap
+            
             const slideWidth = slides[0].offsetWidth;
-            const gap = 20; // Matches CSS gap
+            const gap = 20; 
 
-            // Dynamic translation to keep active slide perfectly centered
+            
             const containerWidth = document.getElementById('gallery-slider-container').offsetWidth;
             const offset = (containerWidth / 2) - (slideWidth / 2) - index * (slideWidth + gap);
             sliderTrack.style.transform = `translateX(${offset}px)`;
 
-            // Update text
+            
             captionText.style.opacity = '0';
             counterText.style.opacity = '0';
 
@@ -1115,7 +1115,7 @@
             updateGallery(newIndex);
         });
 
-        // Use event delegation for thumbnails
+        
         thumbnailContainer.addEventListener('click', (e) => {
             const thumb = e.target.closest('.thumbnail-item');
             if (thumb) {
@@ -1124,10 +1124,10 @@
             }
         });
 
-        // Handle window resize to keep slider position correct
+        
         window.addEventListener('resize', () => updateGallery(currentImageIndex));
 
-        // Initialize on load
+        
         initGallery();
     </script>
 </body>
